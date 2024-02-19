@@ -18,7 +18,7 @@
 
     <nav class="navbar navbar-dark bg-dark">
       <a class="navbar-brand" href="#">
-        <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        <img src="imagens/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         App Help Desk
       </a>
     </nav>
@@ -44,6 +44,13 @@
                   if(isset($_GET['login']) && $_GET['login']=='erro'){  ?>
                     <div class="text-danger">
                       Usuário ou senha inválido
+                    </div>
+                  <?php }  ?>
+
+                  <?php
+                  if(isset($_GET['login']) && $_GET['login']=='erro2'){  ?>
+                    <div class="text-danger">
+                    Faça login antes de acessar as páginas protegidas
                     </div>
                   <?php }  ?>
 
