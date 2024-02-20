@@ -23,10 +23,12 @@ foreach($usuarios_app as $user){
 if($usuario_autenticado){
     echo 'usuário autenticado';
     $_SESSION["autenticado"]="sim";
+    header("Location: home.php");
+    
 }
 else{
     $_SESSION["autenticado"]="não";
-   header("Location: index.php?login=erro");
+   
 }
 
 /*
