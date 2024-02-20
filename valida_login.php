@@ -28,7 +28,7 @@ if($usuario_autenticado){
 }
 else{
     $_SESSION["autenticado"]="não";
-   
+   header("Location: index.php?login=erro");
 }
 
 /*
