@@ -50,7 +50,7 @@
                  
                 </div>
                 <div class="col-6 d-flex justify-content-center">
-                  <a href=""> <img src="imagens/formulario_consultar_chamado.png" width="70" height="70"></a>
+                  <a href="consultar_chamado.php"> <img src="imagens/formulario_consultar_chamado.png" width="70" height="70"></a>
                 </div>
               </div>
             </div>
