@@ -6,8 +6,15 @@
 
 //variavel que identifica se a autenticação foi feita
 $usuario_autenticado=false;
-$usuarios_app= array(array('email'=>'admteste@gmail.com.br','senha'=>"1234567"),
-array('email'=>'admteste@gmail.com.br','senha'=>"1234567"));
+$usuario_id=null;
+$usuario_perfil_id=null;
+
+$perfis= array(1=>'Administrativo',2=>'Usuário');
+$usuarios_app= array(
+array('id'=>1,'email'=>'admteste@gmail.com.br','senha'=>"1234",'perfil_id'=>1),
+array('id'=>2,'email'=>'user@gmail.com.br','senha'=>"1234",'perfil_id'=>1),
+array('id'=>3,'email'=>'joseteste@gmail.com.br','senha'=>"1234",'perfil_id'=>2),
+array('id'=>4,'email'=>'mariateste@gmail.com.br','senha'=>"1234",'perfil_id'=>2));
 
 
 
@@ -17,12 +24,17 @@ array('email'=>'admteste@gmail.com.br','senha'=>"1234567"));
 foreach($usuarios_app as $user){
  if($user['email']==$_POST['email'] && $user['senha']==$_POST['senha']){
     $usuario_autenticado=true;
+    $usuario_id= $user['id'];
+    $usuario_perfil_id= $user['perfil_id'];
  }
 }
 
 if($usuario_autenticado){
     echo 'usuário autenticado';
     $_SESSION["autenticado"]="sim";
+    $_SESSION['id']=$usuario_id;
+    $_SESSION['perfil_id']=$usuario_perfil_id;
+   
     header("Location: home.php");
     
 }
